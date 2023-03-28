@@ -10,8 +10,18 @@ textarea {
 
 button {
     margin: 8px;
+    padding: 8px;
+    font-size: large;
 }
 
 p {
     padding-left: 8px;
+}
+
+.align-left{
+    float: left;
+}
+
+.align-right{
+    float: right;
 }

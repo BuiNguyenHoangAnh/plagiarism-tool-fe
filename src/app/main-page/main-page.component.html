@@ -1,9 +1,12 @@
 <h1>Plagiarism Tool</h1>
 
+<span>Enter your text or </span>
+<input type="file" accept=".pdf,.txt,.json" (change)="openFile($event)">
+
 <textarea matInput placeholder="Start by writing or pasting something here ..." class="textareafull" [(ngModel)]="data" name="inputValue"></textarea>
 <br>
-<button (click)="check()">Check</button>
-<p>Click the "Check" button and your text will be check.</p>
-<br>
+<p class="align-left ">Click the "Check" button and your text will be check.</p>
+<button class="align-right" (click)="check()">Check</button>
+<!-- <br>
 <textarea rows="10"></textarea>
-<p >Rate: 0.7089342146</p>
+<p >Rate: 0.7089342146</p> -->
