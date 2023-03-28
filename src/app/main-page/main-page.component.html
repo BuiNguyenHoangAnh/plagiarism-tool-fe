@@ -1,12 +1,32 @@
 <h1>Plagiarism Tool</h1>
 
-<span>Enter your text or </span>
+<span>Enter your text <a style="font-style: italic;">or </a></span>
 <input type="file" accept=".pdf,.txt,.json" (change)="openFile($event)">
-
-<textarea matInput placeholder="Start by writing or pasting something here ..." class="textareafull" [(ngModel)]="data" name="inputValue"></textarea>
 <br>
+<br>
+
+<textarea matInput placeholder="Start by writing or pasting something here ..." class="textareafull" [(ngModel)]="data"
+    name="inputValue"></textarea>
 <p class="align-left ">Click the "Check" button and your text will be check.</p>
 <button class="align-right" (click)="check()">Check</button>
+
+<!-- ref: https://stackblitz.com/edit/angular-g4rdha?file=src%2Fapp%2Fapp.component.css -->
+<div class="overlay" *ngIf="popup">
+    <div class="popup">
+        <h2>Results</h2>
+        <a class="close" (click)="popup = false">&times;</a>
+        <div class="content">
+            <div class="report">
+                <p >Rate: 0.7089342146</p>
+            </div>
+            <div class="compare">
+                
+                <textarea class="align-left"></textarea>
+                <textarea class="align-right"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- <br>
 <textarea rows="10"></textarea>
 <p >Rate: 0.7089342146</p> -->

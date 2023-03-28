@@ -12,6 +12,7 @@ export class MainPageComponent implements OnInit {
   result: String = ''
 
   context: any;
+  popup: Boolean = false;
 
   constructor(private checkPlagiarism: CheckPlagiarismService, private fileUploadService: FileUploadService) { }
 
@@ -32,6 +33,7 @@ export class MainPageComponent implements OnInit {
   }
 
   check() {
+    this.popup = true;
     this.checkPlagiarism.checkPlagiarism(this.data).subscribe((res: any) => {
       this.result = res.result
     })
