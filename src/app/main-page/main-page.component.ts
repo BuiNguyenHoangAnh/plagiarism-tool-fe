@@ -14,6 +14,22 @@ export class MainPageComponent implements OnInit {
   context: any;
   popup: Boolean = false;
 
+  chartOptions = {
+    animationEnabled: true,
+    theme: "light",
+    data: [{
+      type: "pie",
+      startAngle: 45,
+      indexLabel: "{name}: {y}",
+      indexLabelPlacement: "inside",
+      yValueFormatString: "#,###.##'%'",
+      dataPoints: [
+        { y: 25, name: "Plagiarized" },
+        { y: 75, name: "Unique" },
+      ]
+    }]
+  }
+
   constructor(private checkPlagiarism: CheckPlagiarismService, private fileUploadService: FileUploadService) { }
 
   ngOnInit(): void {
